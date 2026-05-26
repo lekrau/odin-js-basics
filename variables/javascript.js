@@ -12,6 +12,8 @@ age = 54;
 console.log(age); // what will be output now?
 
 const pi = 3.14;
-pi = 10;
+// pi = 10;
 
 console.log(pi); // What will be output?
+
+console.log((3 + 2) - 76 * (1 + 1));
