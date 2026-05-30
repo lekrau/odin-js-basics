@@ -10,7 +10,32 @@ select.addEventListener("change", () => {
 function createCalendar(month) {
   let days = 31;
 
-  // ADD CONDITIONAL HERE
+  switch (month) {
+  case "February":
+    days = 28;
+    break;
+
+  case "April":
+    days = 30;
+    break;
+
+  case "June":
+    days = 30;
+    break;
+
+  case "September":
+    days = 30;
+    break;
+
+  case "November":
+    days = 30;
+    break;
+
+  default:
+    // Redundant
+    days = 31;
+    break;
+  }
 
   list.textContent = "";
   h1.textContent = month;
