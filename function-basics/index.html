@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Assignment 1
+        function add7(num) {
+            return num + 7;
+        }
+
+        // Assignment 2
+        function multiply(multiplier, multiplicand) {
+            return multiplier * multiplicand;
+        }
+
+        // Assignment 3
+        function capitalize(string) {
+            let result = string.substring(0,1).toUpperCase() + string.substring(1,string.length).toLowerCase();
+            return result;
+        }
+
+        // Assignment 4
+        function lastLetter(string) {
+            return string.charAt(string.length-1);
+        }
+
+        // Testing
+        console.log("add7(10): ", add7(10));
+        console.log("multiply(3, 2): ", multiply(3, 2));
+        console.log(`capitalize("abcd"): `, capitalize("abcd"));
+        console.log(`capitalize("ABCD"): `, capitalize("ABCD"));
+        console.log(`capitalize("aBcD"): `, capitalize("aBcD"));
+        console.log(`lastLetter("abcd"): `, lastLetter("abcd"));
+    </script>
+</body>
+</html>
