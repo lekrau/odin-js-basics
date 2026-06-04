@@ -1,7 +1,6 @@
 # Nth Highest Number
 
 Small JavaScript exercise inspired by Richard Reis' article
-Inspired by Richard Reis' article
 [How to think like a programmer — lessons in problem solving](https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/)
 and V. Anton Spraul's reduce-the-problem technique.
 
