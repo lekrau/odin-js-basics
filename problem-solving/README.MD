@@ -25,7 +25,7 @@ This folder is for practicing the The Odin Project lesson on [Problem Solving](h
 * Do not over-refactor or add edge cases beyond the stated assumptions.
 
 ### List of exercises:
-1. Find the second smallest distinct number in an array.
+1. Find the second smallest distinct number in an array -> [done](./01-second-smallest-distinct-number.js)
 2. Count how many times a specific value appears in an array.
 3. Return the longest word in a sentence.
 4. Reverse a string without using reverse().
