@@ -25,11 +25,11 @@ This folder is for practicing the The Odin Project lesson on [Problem Solving](h
 * Do not over-refactor or add edge cases beyond the stated assumptions.
 
 ### List of exercises:
-1. Find the second smallest distinct number in an array -> [done](./01-second-smallest-distinct-number.js)
-2. Count how many times a specific value appears in an array  -> [done](./02-count-value-occurrences.js)
-3. Return the longest word in a sentence -> [done](./03-longest-word-in-sentence.js)
-4. Reverse a string without using reverse() -> [done](./04-reverse-string.js)
-5. Check whether a word is a palindrome -> [done](./05-palindrome-word.js)
-6. Find the average of all even numbers in an array [done](./06-average-of-even-numbers.js)
-7. Remove duplicate values from an array.
+1. Find the second smallest distinct number in an array -> [done](01-second-smallest-distinct-number.js)
+2. Count how many times a specific value appears in an array  -> [done](02-count-value-occurrences.js)
+3. Return the longest word in a sentence -> [done](03-longest-word-in-sentence.js)
+4. Reverse a string without using reverse() -> [done](04-reverse-string.js)
+5. Check whether a word is a palindrome -> [done](05-palindrome-word.js)
+6. Find the average of all even numbers in an array -> [done](06-average-of-even-numbers.js)
+7. Remove duplicate values from an array -> [done](07-remove-duplicates.js)
 8. Convert a sentence to title case.
