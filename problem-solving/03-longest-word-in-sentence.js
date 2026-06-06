@@ -42,7 +42,7 @@
 
 function firstWord(sentence) {
      let wordEnd = sentence.indexOf(" ");
-     if(wordEnd === -1) {
+     if (wordEnd === -1) {
         return sentence;
      } else {
         return sentence.slice(0, wordEnd);
@@ -71,38 +71,89 @@ function firstWordFrom(sentence, beginning) {
 // firstWordFrom("Hello Leon", 0) -> Hello
 // firstWordFrom("Hello Leon", 6) -> Leon
 // firstWordFrom("Return the longest word", 11) -> longest
-console.log('firstWordFrom("Hello Leon", 0)', firstWordFrom("Hello Leon", 0));
-console.log('firstWordFrom("Hello Leon", 6)', firstWordFrom("Hello Leon", 6));
-console.log('firstWordFrom("Return the longest word", 11)', firstWordFrom("Return the longest word", 11));
+// console.log('firstWordFrom("Hello Leon", 0)', firstWordFrom("Hello Leon", 0));
+// console.log('firstWordFrom("Hello Leon", 6)', firstWordFrom("Hello Leon", 6));
+// console.log('firstWordFrom("Return the longest word", 11)', firstWordFrom("Return the longest word", 11));
 
 // Pseudocode for 1)
 // function wordsOfSentence(sentence) {
     // Create a variable called result of type array that starts as an empty array.
-    // Create a variable called keepRunning of type boolean that starts with the value true.
-    // As long as keepRunning is true
+    // Create a variable called keepGoing of type boolean that starts with the value true.
+    // As long as keepGoing is true
         // Add the firstWord of sentence arg to the result variable
         // Check if there is a space after the first word (position = length of the last element of result)
         // If yes, cut the last identified word and the space after it out of the sentence arg
-        // If no, set keepRunning to false
+        // If no, set keepGoing to false
     // Return the result
-
-    // OLD APPROACH
-    // Create a variable called wordBeginning of type number that starts with the value 0.
-    // Create a variable called wordEnd of type number that starts with the value 0.
-    // As long as wordEnd is smaller than the length of the sentence
-        // Search for the position of the next space and safe it to wordBeginning
-        // Search for the position of the following space and safe it to wordEnd
-        // Add the characters between 
 // }
+
+function wordsOfSentence(sentence) {
+    let result = Array();
+    let keepGoing = true;
+    while (keepGoing === true) {
+        result.push(firstWord(sentence));
+        if (sentence.charAt(result[result.length - 1].length) === " ") {
+            sentence = sentence.slice(result[result.length - 1].length + 1, sentence.length);
+        } else {
+            keepGoing = false;
+        }
+    }
+    return result;
+}
 // wordsOfSentence("Hello Leon") -> ["Hello", "Leon"]
 // wordsOfSentence("Return the longest word") -> ["Return", "the", "longest", "word"]
 // wordsOfSentence("Hello") -> ["Hello"]
+// console.log('wordsOfSentence("Hello Leon")', wordsOfSentence("Hello Leon"));
+// console.log('wordsOfSentence("Return the longest word")', wordsOfSentence("Return the longest word"));
+// console.log('wordsOfSentence("Hello")', wordsOfSentence("Hello"));
 
-function wordsOfSentence(sentence) {
-    // TODO TBD WEITER !!!
+// function longestWordInSentence(sentence) {
+        // NOT NEEDED? Create a variable called wordBeginning of type number that starts with the value 0.
+        // NOT NEEDED? Create a variable called wordEnd of type number that starts with the value 0.
+    // Create a variable called result of type string that starts with the value firstWord of sentence.
+    // Create a variable called keepGoing of type boolean that starts with the value true.
+    // As long as keepGoing
+        // If the firstWord of sentence arg is longer than result
+            // Set result to firstWord
+        // If the char in sentence after the firstWord (its length) is space
+            // Remove the firstWord and the following char from sentence
+            // Else: Set keepGoing to false
+    // Return result
+     
+    
+function longestWordInSentence(sentence) {
+    let result = firstWord(sentence);
+    let keepGoing = true;
+    while (keepGoing) {
+        let currentWord = firstWord(sentence);
+        let currentLength = currentWord.length;
+        if (currentLength > result.length) {
+            result = currentWord;
+        }
+        if (sentence.charAt(currentLength) === " ") {
+            sentence = sentence.slice(currentLength + 1, sentence.length);
+        } else {
+            keepGoing = false;
+        }
+    }
+    return result;
 }
 
+console.log('longestWordInSentence("Hello Leon")', longestWordInSentence("Hello Leon"));
+console.log('longestWordInSentence("Return the longest word in a sentence")', longestWordInSentence("Return the longest word in a sentence"));
+console.log('longestWordInSentence("Hello world")', longestWordInSentence("Hello world"));
+console.log('longestWordInSentence("Hello world!")', longestWordInSentence("Hello world!"));
+console.log('longestWordInSentence("Hell0 world")', longestWordInSentence("Hell0 world"));
+
 // Short Debug Log
-// - What went wrong, if anything?
-// - Which assumption was tested or confirmed?
-// - What did I change or learn? Further subproblems become apparent after the rough plan, when starting to write the pseudocode for the subproblems identified up to this point
+// Further subproblems become apparent after the rough plan, when starting to write the pseudocode for the subproblems identified up to this point
+// I learned that a helper function can be useful for discovering an algorithm even if it is not used in the final solution
+// Initial assignment of variables in longestWordInSentence is redundant
+
+// Old Pseudocode for wordsOfSentence
+// Create a variable called wordBeginning of type number that starts with the value 0.
+// Create a variable called wordEnd of type number that starts with the value 0.
+// As long as wordEnd is smaller than the length of the sentence
+    // Search for the position of the next space and safe it to wordBeginning
+    // Search for the position of the following space and safe it to wordEnd
+    // Add the characters between 
