@@ -32,6 +32,6 @@
 // TBD
 
 // Short Debug Log
-// - What went wrong, if anything?
-// - Which assumption was tested or confirmed?
-// - What did I change or learn?
+// What went wrong, if anything?
+// Which assumption was tested or confirmed?
+// What did I change or learn?

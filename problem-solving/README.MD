@@ -32,4 +32,4 @@ This folder is for practicing the The Odin Project lesson on [Problem Solving](h
 5. Check whether a word is a palindrome -> [done](05-palindrome-word.js)
 6. Find the average of all even numbers in an array -> [done](06-average-of-even-numbers.js)
 7. Remove duplicate values from an array -> [done](07-remove-duplicates.js)
-8. Convert a sentence to title case.
+8. Convert a sentence to title case -> [done](08-title-case-sentence.js)
