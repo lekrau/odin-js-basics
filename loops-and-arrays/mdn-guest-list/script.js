@@ -21,7 +21,16 @@ const refused = document.querySelector(".refused");
 admitted.textContent = "Admit: ";
 refused.textContent = "Refuse: ";
 
-// loop starts here
+// Practice of the for...of loop
+for (const person of people) {
+    if (person === "Phil" || person === "Lola") {
+        refused.textContent += person + ", ";
+    } else {
+        admitted.textContent += person + ", ";
+    }   
+}
 
-// refused.textContent += ...;
-// admitted.textContent += ...;
+// No comma at the end of the lists
+const trailingCommaAndSpaceLength = 2;
+refused.textContent = refused.textContent.slice(0, refused.textContent.length - trailingCommaAndSpaceLength) + ".";
+admitted.textContent = admitted.textContent.slice(0, admitted.textContent.length - trailingCommaAndSpaceLength) + ".";
