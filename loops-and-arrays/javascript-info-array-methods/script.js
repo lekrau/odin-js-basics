@@ -86,79 +86,43 @@ function filterRangeInPlace(arr, a, b) {
 
 // #6 Shuffle an array
 function shuffle(array) {
-    const threshold = 0.5;
-    array.sort((a, b) => Math.random() - Math.random());
-    // let randomPositions = randomPositionsForArray(array);
-    // let keepGoing = true;
-    // while (keepGoing) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const storage = array[i];
+        array[i] = array[j];
+        array[j] = storage;
 
-    // }
-    // let storage;
-    // for (let i = 0; i < array.length; i++) {
-    //     const element = array[i];
-    //     storage = randomPositions[i]
-    // }
-}
-
-function randomNumbersForArray(array) {
-    const result = [];
-    for (let i = 0; i < array.length; i++) {
-        result.push(Math.random());
+        // Alternative short form
+        // [array[i], array[j]] = [array[j], array[i]];
     }
-    return result;
 }
-
-function randomPositionsForArray(array) {
-    const randomNumbers = randomNumbersForArray(array);
-    for (let i = 0; i < array.length; i++) {
-        // const element = array[i];
-        replaceLowest(randomNumbers, i + 1);
-    }
-    const result = randomNumbers.map((element) => element - 1);
-    return result;
-}
-
-function replaceLowest(array, number) {
-    let lowest = 1;
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (element < lowest) {
-            lowest = element;
-        }
-    }
-    array[array.indexOf(lowest)] = number;
-    return array;
-}
-
-// console.log(randomNumbersForArray(arr));
-console.log(arr);
-// replaceLowest(arr, 666);
-// console.log(arr);
-
-shuffle(arr);
-console.log(arr);   
-shuffle(arr);
-console.log(arr);   
-shuffle(arr);
-console.log(arr);   
-shuffle(arr);
-console.log(arr);   
-shuffle(arr);
-console.log(arr);
-
-// console.log(randomArr);
-// shuffle(randomArr);
-// console.log(randomArr);
-
-// let test = [];
-// for (let i = 0; i < 100; i++) {
-//     test.push(Math.random() > 0.5);
-// }
-
-// console.log(
-//     test.reduce((accumulator, currentValue) => accumulator + currentValue, 0,)
-// );
-
-
 
 // #7 Filter unique array members
+// Let arr be an array.
+// Create a function unique(arr) that should return an array with unique items of arr.
+
+function unique(arr) {
+    const result = [];
+    for (const element of arr) {
+        if (result.indexOf(element) === -1) {
+            result.push(element);
+        }
+    }
+    return result;
+}
+
+console.log(arr);
+console.log(unique(arr));
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(strings));
+console.log([1, 2, 1, 3, 2]);
+console.log(unique([1, 2, 1, 3, 2]));
+
+for (let i = 0; i < 10; i++) {
+    // shuffle(arr);
+    // console.log(i, arr);
+}
