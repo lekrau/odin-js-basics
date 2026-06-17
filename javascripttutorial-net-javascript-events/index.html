@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Keyboard Events: Key/Code</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <input type="text" id="message">
+
+    <script>
+        let textBox = document.getElementById('message');
+        textBox.addEventListener('keydown', (event) => {
+            console.log(`key=${event.key},code=${event.code}`);
+
+        });
+    </script>
+
+    <ul id="menu">
+        <li><a id="home">home</a></li>
+        <li><a id="dashboard">Dashboard</a></li>
+        <li><a id="report">report</a></li>
+    </ul>
+</body>
+</html>
