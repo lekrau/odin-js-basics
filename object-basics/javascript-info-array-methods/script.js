@@ -1,6 +1,6 @@
 "use strict";
 
-// 1. Map to names
+// 1. Map to names //
 const getUserNames = (arrayOfUserObjects) => {
     const result = [];
     arrayOfUserObjects.forEach(object => {
@@ -15,22 +15,45 @@ const getUserNames2 = (arrayOfUserObjects) => {
     });
 }
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+
+// let names = getUserNames(users);
+// let names2 = getUserNames2(users);
+
+// console.log(names);
+// console.log(names2);
+
+// 2. Map to objects //
+const mapUsers = (users) => {
+    return users.map(user => ({
+            fullName: user.name + " " + user.surname,
+            id: user.id,
+        }));
+};
+
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
 
 let users = [ john, pete, mary ];
 
-let names = getUserNames(users);
-let names2 = getUserNames2(users);
+let usersMapped = mapUsers(users);
 
-console.log(names);
-console.log(names2);
+/*
+usersMapped = [
+    { fullName: "John Smith", id: 1 },
+    { fullName: "Pete Hunt", id: 2 },
+    { fullName: "Mary Key", id: 3 }
+    ]
+    */
 
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // John Smith
 
-
-
-// 2. Map to objects
 // 3. Sort users by age
 // 4. Get average age
 // 5. Create keyed object from array
