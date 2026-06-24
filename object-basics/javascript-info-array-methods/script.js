@@ -89,14 +89,17 @@ const getAverageAge = (users) => {
 // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
 // 5. Create keyed object from array
-// Let’s say we received an array of users in the form {id:..., name:..., age:... }.
-// Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values.
-// In this task we assume that id is unique. There may be no two array items with the same id.
-// Please use array .reduce method in the solution.
 const groupById = (arr) => {
-    // const start = arr.reduce()
-    let result = {};
-    arr.forEach(element => result[element.id] = element);
+    const result = {};
+    arr.forEach(user => result[user.id] = user);
+    return result;
+}
+
+const groupById2 = (arr) => {
+    const result = arr.reduce((accumulator, user) => {
+        accumulator[user.id] = user;
+        return accumulator;
+    }, {});
     return result;
 }
 
@@ -106,7 +109,7 @@ let users = [
   {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
-let usersById = groupById(users);
+let usersById = groupById2(users);
 
 /*
 // after the call we should have:
@@ -118,4 +121,5 @@ usersById = {
 }
 */
 
+console.log(users);
 console.log(usersById);
