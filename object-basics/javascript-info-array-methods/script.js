@@ -60,13 +60,13 @@ const sortByAge = (users) => {
     return users.sort((a, b) => a.age - b.age);
 };
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let arr = [ pete, john, mary ];
+// let arr = [ pete, john, mary ];
 
-sortByAge(arr);
+// sortByAge(arr);
 
 // now: [john, mary, pete]
 // alert(arr[0].name); // John
@@ -74,6 +74,48 @@ sortByAge(arr);
 // alert(arr[2].name); // Pete
 
 // 4. Get average age
+const getAverageAge = (users) => {
+    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+    const userCount = users.length;
+    return totalAge / userCount;
+}
 
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [ john, pete, mary ];
+
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
 // 5. Create keyed object from array
+// Let’s say we received an array of users in the form {id:..., name:..., age:... }.
+// Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values.
+// In this task we assume that id is unique. There may be no two array items with the same id.
+// Please use array .reduce method in the solution.
+const groupById = (arr) => {
+    // const start = arr.reduce()
+    let result = {};
+    arr.forEach(element => result[element.id] = element);
+    return result;
+}
+
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+let usersById = groupById(users);
+
+/*
+// after the call we should have:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
+
+console.log(usersById);
